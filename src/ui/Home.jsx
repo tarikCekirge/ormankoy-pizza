@@ -1,4 +1,5 @@
-function Home() {
+
+const Home = () => {
   return (
     <div>
       <h1>
@@ -7,8 +8,7 @@ function Home() {
         Fırından çıkar çıkmaz kapınızda.
       </h1>
     </div>
-  );
-
+  )
 }
 
-export default Home;
+export default Home
