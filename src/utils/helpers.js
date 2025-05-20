@@ -1,12 +1,14 @@
 export const formatCurrency = (value) => {
   if (value === undefined || value === null) return "";
   if (typeof value !== "number") return value;
-  return new Intl.NumberFormat("tr-TR", {
-    style: "currency",
-    currency: "TRY",
+
+  const formatted = new Intl.NumberFormat("tr-TR", {
+    style: "decimal",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(value);
+
+  return `${formatted}₺`;
 };
 
 export const formatDate = (dateStr) => {
