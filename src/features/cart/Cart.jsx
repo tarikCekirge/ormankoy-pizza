@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import LinkButton from '../../ui/LinkButton';
+import CartItem from './CartItem';
 
 const fakeCart = [
   {
@@ -28,13 +30,18 @@ function Cart() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <Link to="/menu">&larr; Menüyü Görüntüle</Link>
+    <div className="px-4 py-3">
+      <LinkButton to="/menu">&larr; Menüyü Görüntüle</LinkButton>
 
-      <h2>Sepetiniz, %NAME%</h2>
+      <h2 className="mt-7 text-xl font-semibold">Sepetiniz, %NAME%</h2>
+      <ul className="mt-3 divide-y divide-stone-200 border-b">
+        {cart.map((item) => (
+          <CartItem item={item} key={item.pizzaId} />
+        ))}
+      </ul>
 
       <div>
-        <Link to="/order/new">Pizza Siparişi Ver</Link>
+        <Link to="/siparis/yeni">Pizza Siparişi Ver</Link>
         <button>Sepeti Temizle</button>
       </div>
     </div>
