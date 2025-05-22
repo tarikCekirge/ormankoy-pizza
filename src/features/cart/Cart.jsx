@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import LinkButton from '../../ui/LinkButton';
 import CartItem from './CartItem';
+import Button from '../../ui/Button';
 
 const fakeCart = [
   {
@@ -40,9 +41,13 @@ function Cart() {
         ))}
       </ul>
 
-      <div>
-        <Link to="/siparis/yeni">Pizza Siparişi Ver</Link>
-        <button>Sepeti Temizle</button>
+
+      <div className="mt-6 space-x-2">
+        <Button to="/siparis/yeni" type="primary">
+          Sipariş Ver
+        </Button>
+
+        <Button type="secondary">Sepeti Temizle</Button>
       </div>
     </div>
   );
