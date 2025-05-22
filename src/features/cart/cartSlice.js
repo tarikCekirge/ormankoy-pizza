@@ -100,7 +100,8 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { deleteItem, addToCart, removeFromCart, clearCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;
 
 // Selectors
@@ -109,6 +110,8 @@ export const selectCartTotal = (state) =>
 
 export const selectCartCount = (state) =>
   state.cart.cart.reduce((count, item) => count + item.quantity, 0);
+
+export const getCart = (state) => state.cart.cart;
 
 // export const getCart = (state) =>
 //   state.cart.cart.reduce(
