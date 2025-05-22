@@ -17,7 +17,7 @@ function Order() {
   console.log(order)
   const {
     id,
-    status,
+    // status,
     priority,
     priorityPrice,
     orderPrice,
