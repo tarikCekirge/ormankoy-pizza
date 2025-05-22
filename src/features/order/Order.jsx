@@ -9,6 +9,7 @@ import {
 } from "../../utils/helpers";
 import OrderItem from "./OrderItem";
 import { useEffect } from "react";
+import UpdateOrder from "./UpdateOrder";
 
 
 
@@ -72,6 +73,7 @@ function Order() {
         {priority && <p className="text-sm font-medium text-stone-600">Öncelik ücreti: {formatCurrency(priorityPrice)}</p>}
         <p className="font-bold">Kapıda ödenecek toplam: {formatCurrency(orderPrice + priorityPrice)}</p>
       </div>
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 
