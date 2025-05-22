@@ -38,3 +38,7 @@
 body {
   @apply font-roboto;
 }
+
+main:has(.home) {
+  @apply flex h-full w-full max-w-full items-center justify-center bg-[url(/images/main-bg.jpg)] bg-cover bg-center bg-no-repeat;
+}
