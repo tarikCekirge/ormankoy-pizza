@@ -16,13 +16,13 @@ function Order() {
   const order = useLoaderData()
 
   const fetcher = useFetcher()
-
+  console.log(fetcher)
   useEffect(() => {
-    if (!fetcher.data && fetcher.idle === "idle") {
+    if (!fetcher.data && fetcher.state === "idle") {
       fetcher.load(`/menu`)
     }
   }, [fetcher])
-  console.log(fetcher.data)
+
 
   const {
     id,
@@ -56,7 +56,14 @@ function Order() {
       </div>
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.pizzaId} />
+          <OrderItem
+            item={item}
+            key={item.pizzaId}
+            isLoadingIngredients={fetcher.state === 'loading' || !fetcher.data}
+            ingredients={
+              fetcher.data?.find(el => el.id === item.pizzaId)?.ingredients || []
+            }
+          />
         ))}
       </ul>
 
