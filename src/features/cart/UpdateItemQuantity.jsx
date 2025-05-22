@@ -5,7 +5,6 @@ import Button from '../../ui/Button';
 import DeleteItem from './DeleteItem';
 
 const UpdateItemQuantity = ({ pizza }) => {
-    console.log(pizza)
     const dispatch = useDispatch();
 
 

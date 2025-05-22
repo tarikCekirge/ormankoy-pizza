@@ -14,7 +14,6 @@ import OrderItem from "./OrderItem";
 function Order() {
   const order = useLoaderData()
 
-  console.log(order)
   const {
     id,
     // status,
@@ -43,11 +42,11 @@ function Order() {
             ? `Tahmini ${calcMinutesLeft(estimatedDelivery)} dakika içinde teslim edilecek 😃`
             : "Sipariş teslim edilmiş olmalı"}
         </p>
-        <p lassName="text-xs text-stone-500">(Tahmini teslimat: {formatDate(estimatedDelivery)})</p>
+        <p className="text-xs text-stone-500">(Tahmini teslimat: {formatDate(estimatedDelivery)})</p>
       </div>
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
