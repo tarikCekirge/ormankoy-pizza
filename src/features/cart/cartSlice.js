@@ -113,6 +113,10 @@ export const selectCartCount = (state) =>
 
 export const getCart = (state) => state.cart.cart;
 
+export const getCurrentQuantityById = (id) => (state) => {
+  const item = state.cart.cart.find((item) => item.id === id);
+  return item ? item.quantity : 0;
+};
 // export const getCart = (state) =>
 //   state.cart.cart.reduce(
 //     (acc, item) => {
